@@ -5,15 +5,21 @@ import PrimaryLayout from './layouts/PrimaryLayout';
 import AboutUsPage from './pages/AboutUsPage';
 import BookingPage from './pages/BookingPage';
 import IntranetPage from './pages/IntranetPage';
-
 import HomePage from './pages/HomePage';
 import RestaurantPage from './pages/RestaurantPage';
 import RestaurantsPage from './pages/RestaurantsPage';
+import BookingDashboardPage from './pages/BookingDashboardPage';
+
+
+
 
 function App() {
   return (
+    
     <RestaurantsProvider>
+     
       <Routes>
+     
         <Route path="/" element={<PrimaryLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/Restaurants">
@@ -26,9 +32,12 @@ function App() {
           <Route path="*" element={<h1>404</h1>} />
           <Route path="/intranet" element={<IntranetPage />} />
           <Route path="*" element={<h1>404</h1>} />
+          <Route path="/dashboard" element={<BookingDashboardPage />} />
+          <Route path="*" element={<h1>404</h1>} />
         </Route>
       </Routes>
     </RestaurantsProvider>
+    
   );
 }
 
